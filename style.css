@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-image: linear-gradient(to right, #73C0F0, #6BF8E2);
+    margin: auto;
+}
+
+#principal {
+    text-align: center;
+
+}
+
+.blocos{
+    text-align: center;
+
+}
+
+div#res:hover{
+    background-color: red;
+    width: 200px;
+    text-align: center;
+    margin: auto;
+}
+

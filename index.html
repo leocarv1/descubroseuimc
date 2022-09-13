@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <h1 id="principal">Calculadora de IMC</h1>
+    <p class="blocos">Insira seus dados e a calculadora mostrará seu Índice de Massa Corporal</p>
+    <div class="blocos">
+        Declare sua altura:
+    </div>
+
+    <div>
+            <div class="blocos"><input type="number" name="altura" id="numalt"></div>
+    </div><br>
+
+    <div class="blocos">Declare seu peso: </div>
+        <div class="blocos"> 
+        <input type="number" name="peso" id="numpeso">
+    </div><br>
+
+    <div class="blocos">
+        <div><input type="button" value="calcular" onclick="Calcular()"></div>
+    </div> <br>
+
+    <div id="res" class="blocos">Resultado</div>
+
+    <script>
+        function Calcular() {
+            var altura = document.getElementById('numalt')
+            var peso = document.getElementById('numpeso')
+            var res = document.getElementById('res')
+            var n1 = Number(altura.value)
+            var n2 = Number(peso.value)
+            var imc = n2/(n1**2)
+            res.innerHTML = imc
+            if (imc<=18.5)
+            res.innerHTML +=" <strong>Abaixo do peso</strong>\n";
+            else if (imc>18.5 && imc<25)
+            res.innerHTML +=" <strong>Saudável</strong>\n";
+            else if (imc>=25 && imc <30)
+            res.innerHTML +=" <strong>Sobrepeso</strong>\n";
+            else if(imc>=30 && imc<35)
+            res.innerHTML +=" <strong>Obesidade grau I</strong>\n";
+            else if (imc>=35 && imc<40)
+            res.innerHTML +=" <strong>Obesidade grau II</strong>\n";
+            else if (imc>=40)
+            res.innerHTML += "<strong>Obesidade grau III</strong>\n";
+        }
+
+    </script>
+</body>
+</html>
